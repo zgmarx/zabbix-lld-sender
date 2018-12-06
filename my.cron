@@ -1,0 +1,4 @@
+#!/bin/bash
+
+iostat -xm 10 2 > /tmp/zbx-iostat-data.tmp
+mv /tmp/zbx-iostat-data.tmp /tmp/zbx-iostat-data
