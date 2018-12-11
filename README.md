@@ -1,14 +1,20 @@
-zabbix-lld-sender
-===========
+# zabbix-lld-sender
 
-`zabbixdiscovery.py` zabbix low level discovery tool
-`zabbixsender.py` push hundreds or thousands of item value by one push
 
-`my.vfs.iostat.py` is an example of using zabbixdiscovery.py and zabbixsender.py
-`my.cron` put it in the crontab and run it every minute.
+## Scripts Description
 
-Usage
------
+Name     | Description | OS
+---------|-------------|----
+net.device.stats.py | Exposes network interface info from `/sys/class/net/` | Linux
+my.vfs.iostat.py    | Exposes mountpoint(disk) I/O statistics.              | Darwin, Linux
+app.url.status.py   | Check url availability by response code.              | Darwin, Linux
+zabbixdiscovery.py  | Zabbix low level discovery tool                       | Linux
+zabbixsender.py     | Push hundreds or thousands of item value by one push  | Linux
+
+
+## Usage
+
+### zabbixsender, zabbixdiscovery, my.vfs.iostat.py
 
 ```shell
 git clone https://github.com/zgmarx/zabbix-lld-sender
@@ -39,11 +45,11 @@ this command will ends with error because we havn't create zabbix LLD on zabbix-
 - my.vfs.iostat[/,w_await] 0.05
 - my.vfs.iostat[/,wrqm/s] 0.50
 
+
 ```
 
-### Scripts Description
+### app.url.status.py
 
-Name     | Description | OS
----------|-------------|----
-net.device.stats.py | Exposes network interface info from `/sys/class/net/` | Linux
-my.vfs.iostat.py    | Exposes mountpoint(disk) I/O statistics.              | Darwin, Linux
+```shell
+python app.url.status.py 'https://www.google.com' GET 200
+```
