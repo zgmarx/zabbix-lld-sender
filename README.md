@@ -40,3 +40,10 @@ this command will ends with error because we havn't create zabbix LLD on zabbix-
 - my.vfs.iostat[/,wrqm/s] 0.50
 
 ```
+
+### Scripts Description
+
+Name     | Description | OS
+---------|-------------|----
+net.device.stats.py | Exposes network interface info from `/sys/class/net/` | Linux
+my.vfs.iostat.py    | Exposes mountpoint(disk) I/O statistics.              | Darwin, Linux
